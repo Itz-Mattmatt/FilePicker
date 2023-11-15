@@ -54,6 +54,7 @@ import com.jaiselrahman.filepicker.model.MediaFileViewModel;
 import com.jaiselrahman.filepicker.view.DividerItemDecoration;
 
 import java.util.ArrayList;
+import java.util.jar.Manifest;
 
 @SuppressLint("StringFormatMatches")
 public class FilePickerActivity extends AppCompatActivity
@@ -161,7 +162,7 @@ public class FilePickerActivity extends AppCompatActivity
         recyclerView.setHasFixedSize(false);
         recyclerView.setItemViewCacheSize(20);
 
-        if (requestPermission(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_WRITE_PERMISSION)) {
+        if (requestPermission(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.READ_MEDIA_IMAGES}, REQUEST_WRITE_PERMISSION)) {
             loadFiles();
         }
 
